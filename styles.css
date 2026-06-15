@@ -958,6 +958,18 @@ button, input, textarea, select {
 .pub-citation em {
   font-style: italic;
 }
+.pub-citation a {
+  color: var(--teal);
+  text-decoration: underline;
+  word-break: break-all;
+  transition: opacity var(--transition-fast);
+}
+.pub-citation a:hover {
+  opacity: 0.8;
+}
+.publications .pub-citation a {
+  color: var(--teal-light);
+}
 .pubs-list .pub-card .pub-citation {
   color: var(--text-dark);
 }
