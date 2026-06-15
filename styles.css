@@ -948,6 +948,20 @@ button, input, textarea, select {
   margin-bottom: var(--spacing-md);
 }
 
+.pub-citation {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--spacing-md);
+}
+.pub-citation em {
+  font-style: italic;
+}
+.pubs-list .pub-card .pub-citation {
+  color: var(--text-dark);
+}
+
 .pub-footer {
   margin-top: auto;
 }
