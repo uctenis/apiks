@@ -88,6 +88,66 @@
     background: var(--slate-300);
     border-radius: var(--border-radius-full);
   }
+
+  /* Team Section Mobile Refinements */
+  .equipo-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-lg) !important;
+    padding: 0 var(--spacing-xs) !important;
+  }
+
+  .eq-card {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 16px !important;
+  }
+
+  .eq-photo {
+    width: 100% !important;
+    height: 250px !important;
+  }
+
+  .eq-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .eq-info {
+    padding: var(--spacing-md) !important;
+  }
+
+  .eq-info h2 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .eq-info .eq-bio {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: var(--spacing-sm) !important;
+  }
+
+  .eq-links {
+    margin-top: auto !important;
+    padding-top: var(--spacing-xs) !important;
+  }
+
+  /* Dashboard Mobile Refinements */
+  .dashboard {
+    padding: var(--spacing-md) !important;
+    margin-bottom: var(--spacing-xl) !important;
+  }
+
+  .db-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-lg) !important;
+  }
+
+  .db-chart-card {
+    padding: var(--spacing-md) !important;
+  }
 }
 
 /* Ensure bottom tab bar is hidden on Desktop */
