@@ -1,0 +1,98 @@
+/* ==========================================================================
+   APIKS CHILE - NATIVE IPHONE / MOBILE NAVIGATION SYSTEM (iphone.css)
+   ========================================================================== */
+
+/* Only apply on screens smaller than 768px */
+@media (max-width: 767px) {
+  /* Prevent default blue selection highlight on iOS Safari taps */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Safe Area Padding at the bottom for iPhone Home Indicator bar */
+  body {
+    padding-bottom: calc(65px + env(safe-area-inset-bottom)) !important;
+  }
+
+  /* Hide regular header navigation toggle (hamburger menu) and drawers on iPhone
+     to leverage the native-like tab bar navigation instead */
+  .nav-toggle {
+    display: none !important;
+  }
+  
+  .nav-links {
+    display: none !important;
+  }
+
+  /* Floating Bottom Tab Bar Navigation */
+  .iphone-tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(60px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.82);
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
+    z-index: 9999;
+    box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.04);
+  }
+
+  .iphone-tab-bar .tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-decoration: none;
+    gap: 3px;
+    transition: color var(--transition-fast);
+  }
+
+  .iphone-tab-bar .tab-item svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.2;
+    transition: transform var(--transition-fast);
+  }
+
+  .iphone-tab-bar .tab-item:active svg {
+    transform: scale(0.9);
+  }
+
+  .iphone-tab-bar .tab-item.active {
+    color: var(--teal);
+  }
+
+  /* Smooth momentum scrolling on iOS viewports */
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* iPhone Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--slate-300);
+    border-radius: var(--border-radius-full);
+  }
+}
+
+/* Ensure bottom tab bar is hidden on Desktop */
+@media (min-width: 768px) {
+  .iphone-tab-bar {
+    display: none !important;
+  }
+}

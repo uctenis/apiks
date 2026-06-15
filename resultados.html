@@ -20,6 +20,12 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="iphone.css" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="APIKS Chile" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
 <body>
 
@@ -262,6 +268,30 @@
 <button class="back-to-top" id="back-to-top" aria-label="Volver al inicio" title="Volver al inicio">
   <i data-lucide="arrow-up" aria-hidden="true"></i>
 </button>
+
+  <!-- iPhone/Mobile Native Bottom Tab Bar -->
+  <nav class="iphone-tab-bar" aria-label="Navegación móvil">
+    <a href="index.html" class="tab-item ">
+      <i data-lucide="home"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="sobre.html" class="tab-item ">
+      <i data-lucide="info"></i>
+      <span>Sobre</span>
+    </a>
+    <a href="investigacion.html" class="tab-item ">
+      <i data-lucide="book-open"></i>
+      <span>Investigar</span>
+    </a>
+    <a href="equipo.html" class="tab-item ">
+      <i data-lucide="users"></i>
+      <span>Equipo</span>
+    </a>
+    <a href="contacto.html" class="tab-item ">
+      <i data-lucide="mail"></i>
+      <span>Contacto</span>
+    </a>
+  </nav>
 
 <script src="main.js"></script>
 </body>
