@@ -1763,7 +1763,7 @@ button, input, textarea, select {
   height: 26px;
 }
 
-/* Specifics for publicaciones.html */
+/* Specifics for publications section in investigacion.html */
 .filter-bar {
   background-color: var(--slate-100);
   border-radius: var(--border-radius-lg);
