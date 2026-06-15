@@ -216,6 +216,89 @@ document.addEventListener('DOMContentLoaded', () => {
       heroParticlesContainer.appendChild(particle);
     }
   }
+
+  // 8. PUBLICATIONS SEARCH & FILTER (CONSOLIDATED ON RESEARCH PAGE)
+  const searchInput = document.getElementById('pub-search');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pubCards = document.querySelectorAll('.pub-card');
+  const resultsCount = document.getElementById('pub-results-count');
+  const noResultsEl = document.getElementById('pub-no-results');
+  const resetBtn = document.getElementById('pub-reset-btn');
+
+  if (searchInput && pubCards.length > 0) {
+    let activeType = 'all';
+    let searchQuery = '';
+
+    const filterPubs = () => {
+      let visibleCount = 0;
+      pubCards.forEach(card => {
+        const type = card.getAttribute('data-type');
+        const citationText = card.querySelector('.pub-citation').textContent.toLowerCase();
+
+        const matchesType = activeType === 'all' || type === activeType;
+        const matchesSearch = citationText.includes(searchQuery);
+
+        if (matchesType && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update counter text
+      if (resultsCount) {
+        const total = pubCards.length;
+        const isEnglish = document.documentElement.lang === 'en';
+        if (isEnglish) {
+          resultsCount.textContent = `Showing ${visibleCount} of ${total} publications`;
+        } else {
+          resultsCount.textContent = `Mostrando ${visibleCount} de ${total} publicaciones`;
+        }
+      }
+
+      // Show/hide no results message
+      if (noResultsEl) {
+        if (visibleCount === 0) {
+          noResultsEl.style.display = 'block';
+        } else {
+          noResultsEl.style.display = 'none';
+        }
+      }
+    };
+
+    // Search input event
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      filterPubs();
+    });
+
+    // Filter button click event
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeType = btn.getAttribute('data-type');
+        filterPubs();
+      });
+    });
+
+    // Reset button event
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        activeType = 'all';
+        filterBtns.forEach(b => b.classList.remove('active'));
+        const allBtn = document.querySelector('.filter-btn[data-type="all"]');
+        if (allBtn) allBtn.classList.add('active');
+        filterPubs();
+      });
+    }
+
+    // Run once at load to set initial counter
+    filterPubs();
+  }
 });
 
 // Particle Float keyframes injected in page style

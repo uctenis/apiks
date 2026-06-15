@@ -235,6 +235,9 @@
         </div>
       </div>
 
+      <!-- Contador de Resultados -->
+      <div class="pub-results-count" id="pub-results-count" aria-live="polite"></div>
+
       <!-- Lista de Publicaciones -->
       <div class="pubs-list" id="pubs-list" role="list">
         
@@ -338,6 +341,16 @@
         </article>
 
       </div>
+
+      <!-- Estado Vacío (Sin Resultados) -->
+      <div class="pub-no-results" id="pub-no-results" style="display: none;">
+        <div class="no-results-icon" aria-hidden="true">
+          <i data-lucide="search"></i>
+        </div>
+        <h3>No se encontraron publicaciones</h3>
+        <p>No hay artículos o capítulos que coincidan con tu criterio de búsqueda. Intenta ajustar el texto o los filtros.</p>
+        <button type="button" class="btn btn-outline reset-search-btn" id="pub-reset-btn">Restablecer filtros</button>
+      </div>
     </section>
 
   </div>
@@ -416,49 +429,5 @@
 </button>
 
 <script src="main.js"></script>
-
-<!-- Filter Script -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.getElementById('pub-search');
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const pubCards = document.querySelectorAll('.pub-card');
-
-  let activeType = 'all';
-  let searchQuery = '';
-
-  const filterPubs = () => {
-    pubCards.forEach(card => {
-      const type = card.getAttribute('data-type');
-      const citationText = card.querySelector('.pub-citation').textContent.toLowerCase();
-
-      const matchesType = activeType === 'all' || type === activeType;
-      const matchesSearch = citationText.includes(searchQuery);
-
-      if (matchesType && matchesSearch) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  };
-
-  // Search input event
-  searchInput.addEventListener('input', (e) => {
-    searchQuery = e.target.value.toLowerCase().trim();
-    filterPubs();
-  });
-
-  // Filter button click event
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeType = btn.getAttribute('data-type');
-      filterPubs();
-    });
-  });
-});
-</script>
 </body>
 </html>
