@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Results — APIKS Chile</title>
+  <meta name="description" content="Interactive dashboard featuring APIKS survey results in Chile. Data on teaching hours, gender gaps, and research productivity." />
+  <meta name="keywords" content="Results, academic data, statistics, teaching vs research, gender gaps, Chile" />
+  <link rel="alternate" hreflang="es" href="https://www.apikschile.cl/resultados.html" />
+  <link rel="alternate" hreflang="en" href="https://www.apikschile.cl/en/resultados.html" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Research Results — APIKS Chile" />
+  <meta property="og:description" content="Charts and core statistical findings from the APIKS Chile comparative dataset." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.apikschile.cl/en/resultados.html" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<!-- ===== SKIP LINK ===== -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ===== NAVIGATION ===== -->
+<header id="site-header" class="site-header" role="banner">
+  <nav class="nav-container" aria-label="Main navigation">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="APIKS Chile - Home">
+        <span class="logo-mark">APIKS</span>
+        <span class="logo-sub">Chile</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="main-nav" role="list">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="sobre.html" class="nav-link">About APIKS</a></li>
+      <li><a href="investigacion.html" class="nav-link">Research</a></li>
+      <li><a href="resultados.html" class="nav-link active">Results</a></li>
+      <li><a href="publicaciones.html" class="nav-link">Publications</a></li>
+      <li><a href="equipo.html" class="nav-link">Team</a></li>
+      <li><a href="conferencias.html" class="nav-link">Conferences</a></li>
+      <li><a href="noticias.html" class="nav-link">News</a></li>
+      <li><a href="contacto.html" class="nav-link nav-cta">Contact</a></li>
+      <li><a href="../resultados.html" class="lang-selector" aria-label="Switch to Spanish"><i data-lucide="languages" aria-hidden="true"></i> ES</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header" aria-label="Page header">
+  <div class="container">
+    <span class="section-label light">Statistics & Indicators</span>
+    <h1>Research Results</h1>
+    <p>Interactive visualizations of the key findings obtained from the official APIKS Chile dataset.</p>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main id="main-content" class="page-content" role="main">
+  <div class="container">
+    <div class="dashboard" data-aos="fade-up">
+      <div class="section-header center">
+        <span class="section-label">Data Dashboard</span>
+        <h2 class="section-title">The Academic Profession in Figures</h2>
+        <p class="section-desc">Visualizations of behavior, dynamics, and perceptions of university faculty in Chile.</p>
+      </div>
+
+      <div class="db-grid">
+        
+        <!-- Chart 1: Time Allocation -->
+        <div class="db-chart-card">
+          <h3>Distribution of Academic Work Time</h3>
+          <div class="donut-chart-box">
+            <svg class="donut-svg" viewBox="0 0 120 120" aria-label="Pie chart showing time distribution" role="img">
+              <circle class="donut-ring" cx="60" cy="60" r="45"></circle>
+              <!-- Teaching (68%) -->
+              <circle class="donut-segment seg-primary" cx="60" cy="60" r="45" stroke-dasharray="213.6 314.2" stroke-dashoffset="0"></circle>
+              <!-- Research (20%) -->
+              <circle class="donut-segment seg-accent" cx="60" cy="60" r="45" stroke-dasharray="62.8 314.2" stroke-dashoffset="-213.6"></circle>
+              <!-- Management (12%) -->
+              <circle class="donut-segment seg-highlight" cx="60" cy="60" r="45" stroke-dasharray="37.7 314.2" stroke-dashoffset="-276.4"></circle>
+            </svg>
+            <div class="donut-legend">
+              <div class="legend-item">
+                <span class="legend-dot bg-primary" aria-hidden="true"></span>
+                <span>Teaching (68%)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot bg-accent" aria-hidden="true"></span>
+                <span>Research (20%)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot bg-highlight" aria-hidden="true"></span>
+                <span>Management / Admin (12%)</span>
+              </div>
+            </div>
+          </div>
+          <p class="db-chart-desc">
+            Academics in Chile primarily dedicate their work hours to teaching duties and classroom instruction, representing one of the highest teaching allocation rates in the international APIKS network.
+          </p>
+        </div>
+
+        <!-- Chart 2: Scientific Productivity -->
+        <div class="db-chart-card">
+          <h3>Scientific Productivity by Institution Type</h3>
+          <p class="db-chart-desc" style="margin-bottom: var(--spacing-md); margin-top: 0;">Estimated average annual indexed publications per academic by institutional focus.</p>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <span class="bar-label">Research Intensive</span>
+              <div class="bar-container">
+                <div class="bar-fill fill-primary" style="width: 84%;" aria-label="84 percent"></div>
+              </div>
+              <span class="bar-value">4.2</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Private Teaching</span>
+              <div class="bar-container">
+                <div class="bar-fill fill-accent" style="width: 28%;" aria-label="28 percent"></div>
+              </div>
+              <span class="bar-value">1.4</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Teaching Focused</span>
+              <div class="bar-container">
+                <div class="bar-fill fill-highlight" style="width: 16%;" aria-label="16 percent"></div>
+              </div>
+              <span class="bar-value">0.8</span>
+            </div>
+          </div>
+          <p class="db-chart-desc">
+            A structural asymmetry exists, with research output concentrated in traditional universities of high complexity (public and traditional private universities belonging to CRUCH).
+          </p>
+        </div>
+
+        <!-- Chart 3: Gender Gaps -->
+        <div class="db-chart-card">
+          <h3>Perception of Gender Barriers (Early Career)</h3>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <span class="bar-label">Clear Barriers</span>
+              <div class="bar-container">
+                <div class="bar-fill fill-accent" style="width: 30%;" aria-label="30 percent"></div>
+              </div>
+              <span class="bar-value">30%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Neutral / No Report</span>
+              <div class="bar-container">
+                <div class="bar-fill fill-primary" style="width: 70%;" aria-label="70 percent"></div>
+              </div>
+              <span class="bar-value">70%</span>
+            </div>
+          </div>
+          <p class="db-chart-desc">
+            Nearly one-third of female researchers in doctoral and postdoctoral stages report perceiving direct or indirect barriers in academic entry and integration due to gender factors.
+          </p>
+        </div>
+
+        <!-- Chart 4: Research Autonomy -->
+        <div class="db-chart-card">
+          <h3>Autonomy to Set the Research Agenda</h3>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <span class="bar-label">Chile</span>
+              <div class="bar-container">
+                <div class="bar-fill fill-accent" style="style: 72%; width: 72%;" aria-label="72 percent"></div>
+              </div>
+              <span class="bar-value">72%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Global Average</span>
+              <div class="bar-container">
+                <div class="bar-fill fill-primary" style="style: 65%; width: 65%;" aria-label="65 percent"></div>
+              </div>
+              <span class="bar-value">65%</span>
+            </div>
+          </div>
+          <p class="db-chart-desc">
+            Faculty members at Chilean universities report high margins of intellectual autonomy to select their research topics, exceeding the global average of the international APIKS consortium.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners" aria-labelledby="partners-heading">
+  <div class="container">
+    <h2 id="partners-heading" class="partners-title">Collaborating Universities & Institutions</h2>
+    <div class="partners-list" aria-label="Collaborating institutions list">
+      <div class="partner-item">Universidad de La Frontera</div>
+      <div class="partner-item">Pontificia Universidad Católica de Chile</div>
+      <div class="partner-item">Universidad de Chile</div>
+      <div class="partner-item">Universidad Diego Portales</div>
+      <div class="partner-item">Universidad Arturo Prat</div>
+      <div class="partner-item">Universidad de Tarapacá</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-mark">APIKS</span>
+            <span class="logo-sub">Chile</span>
+          </div>
+          <p class="footer-tagline">Academic Profession in the<br />Knowledge-Based Society</p>
+          <p class="footer-desc">Researching the academic profession in Chile and the world from a comparative international perspective.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3>Navigation</h3>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">About APIKS</a></li>
+            <li><a href="investigacion.html">Research</a></li>
+            <li><a href="resultados.html">Results</a></li>
+            <li><a href="publicaciones.html">Publications</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Secondary navigation">
+          <h3>More</h3>
+          <ul role="list">
+            <li><a href="equipo.html">Team</a></li>
+            <li><a href="conferencias.html">Conferences</a></li>
+            <li><a href="noticias.html">News</a></li>
+            <li><a href="contacto.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>For collaborations, research inquiries, or details about APIKS Chile.</p>
+          <a href="contacto.html" class="footer-contact-btn">Write to us →</a>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="https://www.apikschile.cl" target="_blank" rel="noopener" aria-label="Official APIKS Chile website">
+              <i data-lucide="external-link" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2024 APIKS Chile. All rights reserved.</p>
+      <p class="footer-global">Part of the international <strong>APIKS</strong> network — Academic Profession in the Knowledge-Based Society</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+  <i data-lucide="arrow-up" aria-hidden="true"></i>
+</button>
+
+<script src="../main.js"></script>
+</body>
+</html>

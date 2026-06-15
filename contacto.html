@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — APIKS Chile</title>
+  <meta name="description" content="Ponte en contacto con el equipo de APIKS Chile para colaboraciones de investigación, consultas académicas o solicitud de datos." />
+  <meta name="keywords" content="Contacto, consultas, colaboración, Pamela Guzmán, UFRO, Chile" />
+  <link rel="alternate" hreflang="es" href="https://www.apikschile.cl/contacto.html" />
+  <link rel="alternate" hreflang="en" href="https://www.apikschile.cl/en/contacto.html" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contacto — APIKS Chile" />
+  <meta property="og:description" content="Formulario formal de contacto institucional para entablar lazos científicos con APIKS Chile." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.apikschile.cl/contacto.html" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== SKIP LINK ===== -->
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- ===== NAVIGATION ===== -->
+<header id="site-header" class="site-header" role="banner">
+  <nav class="nav-container" aria-label="Navegación principal">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="APIKS Chile - Inicio">
+        <span class="logo-mark">APIKS</span>
+        <span class="logo-sub">Chile</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="main-nav" role="list">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="sobre.html" class="nav-link">Sobre APIKS</a></li>
+      <li><a href="investigacion.html" class="nav-link">Investigación</a></li>
+      <li><a href="resultados.html" class="nav-link">Resultados</a></li>
+      <li><a href="publicaciones.html" class="nav-link">Publicaciones</a></li>
+      <li><a href="equipo.html" class="nav-link">Equipo</a></li>
+      <li><a href="conferencias.html" class="nav-link">Conferencias</a></li>
+      <li><a href="noticias.html" class="nav-link">Noticias</a></li>
+      <li><a href="contacto.html" class="nav-link nav-cta active">Contacto</a></li>
+      <li><a href="en/contacto.html" class="lang-selector" aria-label="Cambiar a Inglés"><i data-lucide="languages" aria-hidden="true"></i> EN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header" aria-label="Cabecera de página">
+  <div class="container">
+    <span class="section-label light">Contacto Formal</span>
+    <h1>Contacto e Institucional</h1>
+    <p>¿Interesado en colaborar con APIKS Chile o solicitar acceso a datos agregados del estudio? Escríbenos.</p>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main id="main-content" class="page-content" role="main">
+  <div class="container">
+    <div class="contacto-grid" data-aos="fade-up">
+      
+      <!-- Info Column -->
+      <div class="contacto-info">
+        <div class="contacto-item">
+          <div class="contacto-icon" aria-hidden="true"><i data-lucide="mail"></i></div>
+          <div class="contacto-text">
+            <h3>Coordinación Nacional</h3>
+            <p><strong>Pamela Guzmán, Ph.D</strong><br />Country Team Leader APIKS Chile</p>
+            <p><a href="mailto:pamela.guzman@ufrontera.cl" style="color: var(--teal); font-weight: 600;">pamela.guzman@ufrontera.cl</a></p>
+          </div>
+        </div>
+
+        <div class="contacto-item">
+          <div class="contacto-icon" aria-hidden="true"><i data-lucide="map-pin"></i></div>
+          <div class="contacto-text">
+            <h3>Sede Institucional Principal</h3>
+            <p><strong>Universidad de La Frontera</strong><br />Avenida Francisco Salazar 01145, Temuco, Región de La Araucanía, Chile.</p>
+          </div>
+        </div>
+
+        <div class="contacto-item">
+          <div class="contacto-icon" aria-hidden="true"><i data-lucide="message-square"></i></div>
+          <div class="contacto-text">
+            <h3>Redes y Colaboración</h3>
+            <p>
+              Fomentamos la investigación interdisciplinaria y el intercambio de datasets secundarios. Si eres estudiante de postgrado o investigador en políticas públicas de educación superior, no dudes en entablar contacto.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Column -->
+      <div class="contacto-form-box">
+        <form class="contacto-form" id="contact-form" novalidate aria-label="Formulario de contacto de APIKS Chile">
+          
+          <div class="form-row">
+            <div class="form-control">
+              <label for="contact-name">Nombre completo *</label>
+              <input type="text" id="contact-name" name="name" required aria-required="true" placeholder="Tu nombre" />
+              <span class="form-error" id="error-name" aria-live="polite"></span>
+            </div>
+            <div class="form-control">
+              <label for="contact-email">Correo institucional *</label>
+              <input type="email" id="contact-email" name="email" required aria-required="true" placeholder="nombre@institucion.cl" autocomplete="email" />
+              <span class="form-error" id="error-email" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <label for="contact-subject">Asunto *</label>
+            <select id="contact-subject" name="subject" required aria-required="true">
+              <option value="">Seleccione una opción</option>
+              <option value="Colaboración científica">Colaboración científica</option>
+              <option value="Solicitud de datos agregados">Solicitud de datos agregados</option>
+              <option value="Consultas de prensa / difusión">Consultas de prensa / difusión</option>
+              <option value="Otro motivo">Otro motivo</option>
+            </select>
+            <span class="form-error" id="error-subject" aria-live="polite"></span>
+          </div>
+
+          <div class="form-control">
+            <label for="contact-message">Mensaje *</label>
+            <textarea id="contact-message" name="message" required aria-required="true" placeholder="Escribe tu consulta detalladamente aquí..."></textarea>
+            <span class="form-error" id="error-message" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="contact-submit">Enviar Mensaje</button>
+          
+          <div class="form-success" id="contact-success" role="alert" aria-live="polite" style="display: none; margin-top: 15px;">
+            ✓ ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo a la brevedad.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners" aria-labelledby="partners-heading">
+  <div class="container">
+    <h2 id="partners-heading" class="partners-title">Universidades e instituciones colaboradoras</h2>
+    <div class="partners-list" aria-label="Lista de universidades colaboradoras">
+      <div class="partner-item">Universidad de La Frontera</div>
+      <div class="partner-item">Pontificia Universidad Católica de Chile</div>
+      <div class="partner-item">Universidad de Chile</div>
+      <div class="partner-item">Universidad Diego Portales</div>
+      <div class="partner-item">Universidad Arturo Prat</div>
+      <div class="partner-item">Universidad de Tarapacá</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-mark">APIKS</span>
+            <span class="logo-sub">Chile</span>
+          </div>
+          <p class="footer-tagline">Academic Profession in the<br />Knowledge-Based Society</p>
+          <p class="footer-desc">Investigando la profesión académica en Chile y el mundo desde una perspectiva comparada internacional.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navegación del pie de página">
+          <h3>Navegación</h3>
+          <ul role="list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre.html">Sobre APIKS</a></li>
+            <li><a href="investigacion.html">Investigación</a></li>
+            <li><a href="resultados.html">Resultados</a></li>
+            <li><a href="publicaciones.html">Publicaciones</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Más páginas">
+          <h3>Más</h3>
+          <ul role="list">
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="conferencias.html">Conferencias</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <p>Para colaboraciones, consultas de investigación o información sobre APIKS Chile.</p>
+          <a href="contacto.html" class="footer-contact-btn">Escribirnos →</a>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="https://www.apikschile.cl" target="_blank" rel="noopener" aria-label="Sitio web oficial APIKS Chile">
+              <i data-lucide="external-link" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2024 APIKS Chile. Todos los derechos reservados.</p>
+      <p class="footer-global">Parte de la red internacional <strong>APIKS</strong> — Academic Profession in the Knowledge-Based Society</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="back-to-top" aria-label="Volver al inicio" title="Volver al inicio">
+  <i data-lucide="arrow-up" aria-hidden="true"></i>
+</button>
+
+<script src="main.js"></script>
+
+<!-- Form Validation Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('contact-success');
+
+  const fields = {
+    name: { input: document.getElementById('contact-name'), error: document.getElementById('error-name') },
+    email: { input: document.getElementById('contact-email'), error: document.getElementById('error-email') },
+    subject: { input: document.getElementById('contact-subject'), error: document.getElementById('error-subject') },
+    message: { input: document.getElementById('contact-message'), error: document.getElementById('error-message') }
+  };
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    // Reset errors
+    Object.values(fields).forEach(f => {
+      f.error.textContent = '';
+      f.input.style.borderColor = '';
+    });
+
+    // Name validation
+    if (!fields.name.input.value.trim()) {
+      fields.name.error.textContent = 'El nombre es obligatorio.';
+      fields.name.input.style.borderColor = '#dc2626';
+      isValid = false;
+    }
+
+    // Email validation
+    const email = fields.email.input.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      fields.email.error.textContent = 'El correo electrónico es obligatorio.';
+      fields.email.input.style.borderColor = '#dc2626';
+      isValid = false;
+    } else if (!emailRegex.test(email)) {
+      fields.email.error.textContent = 'El formato del correo es inválido.';
+      fields.email.input.style.borderColor = '#dc2626';
+      isValid = false;
+    }
+
+    // Subject validation
+    if (!fields.subject.input.value) {
+      fields.subject.error.textContent = 'Debe seleccionar un asunto.';
+      fields.subject.input.style.borderColor = '#dc2626';
+      isValid = false;
+    }
+
+    // Message validation
+    if (!fields.message.input.value.trim()) {
+      fields.message.error.textContent = 'El mensaje es obligatorio.';
+      fields.message.input.style.borderColor = '#dc2626';
+      isValid = false;
+    }
+
+    if (isValid) {
+      // Simulate form submission
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      Object.values(fields).forEach(f => f.input.disabled = true);
+      
+      successMsg.style.display = 'block';
+      
+      setTimeout(() => {
+        form.reset();
+        submitBtn.disabled = false;
+        Object.values(fields).forEach(f => f.input.disabled = false);
+        successMsg.style.display = 'none';
+      }, 5000);
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publicaciones Científicas — APIKS Chile</title>
+  <meta name="description" content="Accede a la producción científica de APIKS Chile. Artículos indexados, capítulos de libros y enciclopedias sobre la profesión académica." />
+  <meta name="keywords" content="Publicaciones, papers, artículos científicos, capítulos de libro, bibliografía académica, Chile" />
+  <link rel="alternate" hreflang="es" href="https://www.apikschile.cl/publicaciones.html" />
+  <link rel="alternate" hreflang="en" href="https://www.apikschile.cl/en/publicaciones.html" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Publicaciones Científicas — APIKS Chile" />
+  <meta property="og:description" content="Catálogo completo de investigaciones y artículos publicados por el equipo chileno de APIKS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.apikschile.cl/publicaciones.html" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== SKIP LINK ===== -->
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- ===== NAVIGATION ===== -->
+<header id="site-header" class="site-header" role="banner">
+  <nav class="nav-container" aria-label="Navegación principal">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="APIKS Chile - Inicio">
+        <span class="logo-mark">APIKS</span>
+        <span class="logo-sub">Chile</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="main-nav" role="list">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="sobre.html" class="nav-link">Sobre APIKS</a></li>
+      <li><a href="investigacion.html" class="nav-link">Investigación</a></li>
+      <li><a href="resultados.html" class="nav-link">Resultados</a></li>
+      <li><a href="publicaciones.html" class="nav-link active">Publicaciones</a></li>
+      <li><a href="equipo.html" class="nav-link">Equipo</a></li>
+      <li><a href="conferencias.html" class="nav-link">Conferencias</a></li>
+      <li><a href="noticias.html" class="nav-link">Noticias</a></li>
+      <li><a href="contacto.html" class="nav-link nav-cta">Contacto</a></li>
+      <li><a href="en/publicaciones.html" class="lang-selector" aria-label="Cambiar a Inglés"><i data-lucide="languages" aria-hidden="true"></i> EN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header" aria-label="Cabecera de página">
+  <div class="container">
+    <span class="section-label light">Producción Académica</span>
+    <h1>Publicaciones Científicas</h1>
+    <p>Artículos indexados, libros, capítulos de libro y enciclopedias resultantes del estudio de la profesión académica.</p>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main id="main-content" class="page-content" role="main">
+  <div class="container">
+    
+    <!-- Filtros de Búsqueda -->
+    <div class="filter-bar">
+      <div class="search-box">
+        <i data-lucide="search" aria-hidden="true"></i>
+        <input type="text" id="pub-search" placeholder="Buscar por título, autor o revista..." aria-label="Buscar publicaciones" />
+      </div>
+      
+      <div class="filter-group" role="group" aria-label="Filtrar por tipo de publicación">
+        <button class="filter-btn active" data-type="all">Todas</button>
+        <button class="filter-btn" data-type="articulo">Artículos</button>
+        <button class="filter-btn" data-type="capitulo">Capítulos</button>
+        <button class="filter-btn" data-type="enciclopedia">Enciclopedias</button>
+      </div>
+    </div>
+
+    <!-- Lista de Publicaciones -->
+    <div class="pubs-list" id="pubs-list" role="list">
+      
+      <!-- 1. Véliz et al 2024 -->
+      <article class="pub-card" data-type="enciclopedia" data-year="2024" role="listitem" tabindex="0">
+        <div class="pub-type">Enciclopedia</div>
+        <h3 class="pub-title">Internationalization Activities in Chilean Universities</h3>
+        <p class="pub-authors">Véliz, D., Berríos, P., Guzmán, P., Bernasconi, A., Celis, S.</p>
+        <p class="pub-journal">Oxford Research Encyclopedia of Education, 2024</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.1093/acrefore/9780190264093.013.1915" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver DOI de Internationalization Activities in Chilean Universities">DOI →</a>
+        </div>
+      </article>
+
+      <!-- 2. Celis et al 2023 -->
+      <article class="pub-card" data-type="capitulo" data-year="2023" role="listitem" tabindex="0">
+        <div class="pub-type">Capítulo de libro</div>
+        <h3 class="pub-title">Internationalization Across Global Divides: Chile, Malaysia and Turkey</h3>
+        <p class="pub-authors">Celis, S., Seggie, F.N., Azman, N.</p>
+        <p class="pub-journal">Springer — The Changing Academy, Vol. 24, 2023</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.1007/978-3-031-26995-0_7" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver DOI de Internationalization Across Global Divides">DOI →</a>
+        </div>
+      </article>
+
+      <!-- 3. Flander et al 2023 -->
+      <article class="pub-card" data-type="capitulo" data-year="2023" role="listitem" tabindex="0">
+        <div class="pub-type">Capítulo de libro</div>
+        <h3 class="pub-title">Early Career Academics and Internationalization</h3>
+        <p class="pub-authors">Flander, A., Guzmán, P., et al.</p>
+        <p class="pub-journal">Springer — The Changing Academy, Vol. 24, 2023</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.1007/978-3-031-26995-0_4" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver DOI de Early Career Academics">DOI →</a>
+        </div>
+      </article>
+
+      <!-- 4. Kocar et al 2023 -->
+      <article class="pub-card" data-type="capitulo" data-year="2023" role="listitem" tabindex="0">
+        <div class="pub-type">Capítulo de libro</div>
+        <h3 class="pub-title">Internationalization of Research Across Disciplines</h3>
+        <p class="pub-authors">Kocar, S., Véliz, D., et al.</p>
+        <p class="pub-journal">Springer — The Changing Academy, Vol. 24, 2023</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.1007/978-3-031-26995-0_8" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver DOI de Internationalization of Research Across Disciplines">DOI →</a>
+        </div>
+      </article>
+
+      <!-- 5. Berrios et al 2022 -->
+      <article class="pub-card" data-type="articulo" data-year="2022" role="listitem" tabindex="0">
+        <div class="pub-type">Artículo indexado</div>
+        <h3 class="pub-title">Academic Profession and Gender among Academics in Formative Stages</h3>
+        <p class="pub-authors">Berrios, P., Montiel, B., Aguilera, F. et al.</p>
+        <p class="pub-journal">Higher Education Forum, 19, 2022</p>
+        <div class="pub-footer">
+          <a href="https://eric.ed.gov/?id=EJ1350471" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver registro en ERIC de Academic Profession and Gender">Enlace ERIC →</a>
+        </div>
+      </article>
+
+      <!-- 6. Guzmán et al 2022 -->
+      <article class="pub-card" data-type="articulo" data-year="2022" role="listitem" tabindex="0">
+        <div class="pub-type">Artículo indexado</div>
+        <h3 class="pub-title">Public-private distinction and academics' societal engagement: Chile and Turkey</h3>
+        <p class="pub-authors">Guzmán, P., et al.</p>
+        <p class="pub-journal">International Journal of Comparative Education and Development, 24(2), 2022</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.1108/IJCED-10-2021-0103" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver DOI de Public-private distinction">DOI →</a>
+        </div>
+      </article>
+
+      <!-- 7. Bernasconi et al 2021 -->
+      <article class="pub-card" data-type="articulo" data-year="2021" role="listitem" tabindex="0">
+        <div class="pub-type">Artículo indexado</div>
+        <h3 class="pub-title">La profesión académica en Chile: perspectivas desde una encuesta internacional</h3>
+        <p class="pub-authors">Bernasconi, A., Berríos, P., Guzmán, P., Véliz, D., Celis, S.</p>
+        <p class="pub-journal">Calidad en la Educación, 54, 2021</p>
+        <div class="pub-footer">
+          <a href="http://dx.doi.org/10.31619/caledu.n54.923" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver DOI de La profesión académica en Chile: perspectivas">DOI →</a>
+        </div>
+      </article>
+
+      <!-- 8. Bernasconi et al 2021 (50 años) -->
+      <article class="pub-card" data-type="articulo" data-year="2021" role="listitem" tabindex="0">
+        <div class="pub-type">Artículo indexado</div>
+        <h3 class="pub-title">La profesión académica en Chile: 50 años en cuatro momentos</h3>
+        <p class="pub-authors">Bernasconi, A., Berríos, P., Véliz, D.</p>
+        <p class="pub-journal">Revista de Educación de Mar del Plata, 2021</p>
+        <div class="pub-footer">
+          <a href="https://fh.mdp.edu.ar/revistas/index.php/r_educ/article/view/5143" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver enlace de La profesión académica en Chile: 50 años">Enlace Revista →</a>
+        </div>
+      </article>
+
+      <!-- 9. Véliz & Celis 2021 -->
+      <article class="pub-card" data-type="capitulo" data-year="2021" role="listitem" tabindex="0">
+        <div class="pub-type">Capítulo de libro</div>
+        <h3 class="pub-title">Development of Research Capabilities of Chilean Faculty</h3>
+        <p class="pub-authors">Véliz, D., Celis, S.</p>
+        <p class="pub-journal">Springer — The Changing Academy, Vol. 22, 2021</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.1007/978-3-030-76579-8_19" target="_blank" rel="noopener" class="pub-doi" aria-label="Ver DOI de Development of Research Capabilities">DOI →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</main>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners" aria-labelledby="partners-heading">
+  <div class="container">
+    <h2 id="partners-heading" class="partners-title">Universidades e instituciones colaboradoras</h2>
+    <div class="partners-list" aria-label="Lista de universidades colaboradoras">
+      <div class="partner-item">Universidad de La Frontera</div>
+      <div class="partner-item">Pontificia Universidad Católica de Chile</div>
+      <div class="partner-item">Universidad de Chile</div>
+      <div class="partner-item">Universidad Diego Portales</div>
+      <div class="partner-item">Universidad Arturo Prat</div>
+      <div class="partner-item">Universidad de Tarapacá</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-mark">APIKS</span>
+            <span class="logo-sub">Chile</span>
+          </div>
+          <p class="footer-tagline">Academic Profession in the<br />Knowledge-Based Society</p>
+          <p class="footer-desc">Investigando la profesión académica en Chile y el mundo desde una perspectiva comparada internacional.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navegación del pie de página">
+          <h3>Navegación</h3>
+          <ul role="list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre.html">Sobre APIKS</a></li>
+            <li><a href="investigacion.html">Investigación</a></li>
+            <li><a href="resultados.html">Resultados</a></li>
+            <li><a href="publicaciones.html">Publicaciones</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Más páginas">
+          <h3>Más</h3>
+          <ul role="list">
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="conferencias.html">Conferencias</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <p>Para colaboraciones, consultas de investigación o información sobre APIKS Chile.</p>
+          <a href="contacto.html" class="footer-contact-btn">Escribirnos →</a>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="https://www.apikschile.cl" target="_blank" rel="noopener" aria-label="Sitio web oficial APIKS Chile">
+              <i data-lucide="external-link" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2024 APIKS Chile. Todos los derechos reservados.</p>
+      <p class="footer-global">Parte de la red internacional <strong>APIKS</strong> — Academic Profession in the Knowledge-Based Society</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="back-to-top" aria-label="Volver al inicio" title="Volver al inicio">
+  <i data-lucide="arrow-up" aria-hidden="true"></i>
+</button>
+
+<script src="main.js"></script>
+
+<!-- Filter Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('pub-search');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pubCards = document.querySelectorAll('.pub-card');
+
+  let activeType = 'all';
+  let searchQuery = '';
+
+  const filterPubs = () => {
+    pubCards.forEach(card => {
+      const type = card.getAttribute('data-type');
+      const title = card.querySelector('.pub-title').textContent.toLowerCase();
+      const authors = card.querySelector('.pub-authors').textContent.toLowerCase();
+      const journal = card.querySelector('.pub-journal').textContent.toLowerCase();
+
+      const matchesType = activeType === 'all' || type === activeType;
+      const matchesSearch = title.includes(searchQuery) || authors.includes(searchQuery) || journal.includes(searchQuery);
+
+      if (matchesType && matchesSearch) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+
+  // Search input event
+  searchInput.addEventListener('input', (e) => {
+    searchQuery = e.target.value.toLowerCase().trim();
+    filterPubs();
+  });
+
+  // Filter button click event
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeType = btn.getAttribute('data-type');
+      filterPubs();
+    });
+  });
+});
+</script>
+</body>
+</html>
