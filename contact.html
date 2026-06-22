@@ -330,19 +330,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (isValid) {
-      // Simulate form submission
       const submitBtn = form.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       Object.values(fields).forEach(f => f.input.disabled = true);
       
-      successMsg.style.display = 'block';
-      
-      setTimeout(() => {
-        form.reset();
+      // Submit via FormSubmit AJAX
+      fetch("https://formsubmit.co/ajax/pamela.guzman@ufrontera.cl", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Name: fields.name.input.value.trim(),
+          Email: fields.email.input.value.trim(),
+          Subject: fields.subject.input.value,
+          Message: fields.message.input.value.trim()
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+          successMsg.style.display = 'block';
+          setTimeout(() => {
+            form.reset();
+            submitBtn.disabled = false;
+            Object.values(fields).forEach(f => f.input.disabled = false);
+            successMsg.style.display = 'none';
+          }, 5000);
+        } else {
+          throw new Error("Server error");
+        }
+      })
+      .catch(error => {
+        console.error("Error submitting form:", error);
+        alert("There was an error sending your message. Please try again or email directly.");
         submitBtn.disabled = false;
         Object.values(fields).forEach(f => f.input.disabled = false);
-        successMsg.style.display = 'none';
-      }, 5000);
+      });
     }
   });
 });

@@ -297,8 +297,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Run once at load to set initial counter
-    filterPubs();
   }
+
+  // 9. MAILTO COPY TO CLIPBOARD FALLBACK & TOAST
+  const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+  mailtoLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const email = link.getAttribute('href').replace('mailto:', '');
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(email).then(() => {
+        // Create toast notification
+        const toast = document.createElement('div');
+        toast.className = 'email-toast';
+        const isEnglish = document.documentElement.lang === 'en';
+        toast.textContent = isEnglish ? `Email copied: ${email}` : `Correo copiado: ${email}`;
+        
+        // Inline styles for toast
+        toast.style.position = 'fixed';
+        toast.style.bottom = '30px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translate(-50%, 10px)';
+        toast.style.backgroundColor = 'var(--navy, #0f172a)';
+        toast.style.color = 'var(--white, #ffffff)';
+        toast.style.padding = '12px 24px';
+        toast.style.borderRadius = 'var(--border-radius-md, 8px)';
+        toast.style.boxShadow = 'var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1))';
+        toast.style.zIndex = '9999';
+        toast.style.fontFamily = 'var(--font-sans, sans-serif)';
+        toast.style.fontSize = '0.9rem';
+        toast.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        toast.style.opacity = '0';
+        
+        document.body.appendChild(toast);
+        
+        // Trigger reflow
+        toast.offsetHeight;
+        
+        // Fade in
+        toast.style.opacity = '1';
+        toast.style.transform = 'translate(-50%, 0)';
+        
+        // Fade out and remove
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translate(-50%, 10px)';
+          setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    });
+  });
 });
 
 // Particle Float keyframes injected in page style
