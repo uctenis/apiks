@@ -1457,19 +1457,40 @@ button, input, textarea, select {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--spacing-xl);
+  gap: clamp(var(--spacing-lg), 3vw, var(--spacing-xl));
 }
 
 .partner-item {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--slate-700);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
   text-align: center;
-  transition: color var(--transition-fast);
+  text-decoration: none;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
 }
+
 .partner-item:hover {
-  color: var(--teal);
+  transform: translateY(-4px);
+  opacity: 1;
+}
+
+.partner-logo {
+  height: 70px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.65);
+  transition: filter var(--transition-normal), transform var(--transition-normal);
+}
+
+.partner-item:hover .partner-logo {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+.partner-name {
+  display: none;
 }
 
 /* ==========================================================================
