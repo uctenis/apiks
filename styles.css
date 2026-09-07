@@ -2510,3 +2510,74 @@ button, input, textarea, select {
   opacity: 1;
   transform: translate(0, 0);
 }
+
+/* ===== FUTURE AP SECTION ===== */
+.future-ap-section {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+}
+.future-ap-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+}
+.future-ap-logo-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.future-ap-logo {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  background: white;
+  padding: 1rem;
+}
+.future-ap-text .section-label {
+  color: var(--teal-light);
+}
+.future-ap-text .section-title {
+  color: white;
+}
+.future-ap-text .section-desc {
+  color: rgba(255,255,255,0.8);
+}
+.future-ap-links {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-lg);
+}
+.future-ap-links .btn-outline {
+  border-color: rgba(255,255,255,0.5);
+  color: white;
+}
+.future-ap-links .btn-outline:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.1);
+}
+.future-ap-links .btn-primary i,
+.future-ap-links .btn-primary svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  margin-right: 0.35em;
+}
+
+@media (max-width: 768px) {
+  .future-ap-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    text-align: center;
+  }
+  .future-ap-logo {
+    max-width: 220px;
+  }
+  .future-ap-links {
+    justify-content: center;
+  }
+}
+
