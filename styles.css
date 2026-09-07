@@ -411,6 +411,75 @@ button, input, textarea, select {
   transform: translateY(-1px);
 }
 
+.nav-link-future {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #38bdf8 !important;
+}
+.nav-link-future::after {
+  background-color: #38bdf8;
+}
+.nav-link-future:hover, .nav-link-future:focus {
+  color: #7dd3fc !important;
+}
+.nav-future-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: fap-glow 2s ease-in-out infinite;
+}
+
+/* Future AP announcement strip (below hero) */
+.fap-announce-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(90deg, #050b14 0%, #081326 50%, #050b14 100%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+.fap-announce-strip:hover, .fap-announce-strip:focus {
+  background: linear-gradient(90deg, #081326 0%, #0c1c38 50%, #081326 100%);
+}
+.fap-announce-strip strong {
+  color: #38bdf8;
+  font-weight: 700;
+}
+.fap-announce-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: fap-glow 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.fap-announce-arrow {
+  color: #38bdf8;
+  font-weight: 700;
+  transition: transform var(--transition-fast);
+}
+.fap-announce-strip:hover .fap-announce-arrow {
+  transform: translateX(4px);
+}
+@media (max-width: 480px) {
+  .fap-announce-strip {
+    font-size: 0.8rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
 .lang-selector {
   display: inline-flex;
   align-items: center;
@@ -2524,6 +2593,7 @@ button, input, textarea, select {
   overflow: hidden;
   border-top: 1px solid rgba(56, 189, 248, 0.2);
   border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+  scroll-margin-top: 100px;
 }
 
 /* Subtle tech grid background */
