@@ -37,7 +37,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3.1" />
   <link rel="icon" type="image/png" href="favicon.png?v=2" />
   <link rel="stylesheet" href="iphone.css" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -502,7 +502,7 @@
   </div>
 </section>
 
-<!-- ===== FUTURE AP ===== -->
+<!-- ===== FUTURE AP (HIGH-IMPACT SHOWCASE) ===== -->
 <section class="future-ap-section" aria-labelledby="future-ap-heading">
   <div class="container">
     <div class="future-ap-grid">
@@ -511,31 +511,32 @@
       <div class="future-ap-content" data-aos="fade-right">
         <span class="future-ap-badge">
           <span class="future-ap-badge-dot"></span>
-          Coming 2027
+          Next Global Horizon · 2027
         </span>
         <h2 id="future-ap-heading" class="future-ap-title">
-          The Future of the<br /><em>Academic Profession</em>
+          The Future of the<br />
+          <span class="future-ap-title-highlight">Academic Profession</span>
         </h2>
         <p class="future-ap-desc">
-          <strong>Future AP</strong> is the international research project giving continuity to APIKS from <strong>2027</strong>.
-          It builds on a foundation of <strong>11 Chilean universities</strong> and 30+ countries worldwide to advance the study of the academic profession in a rapidly changing world.
+          <strong>Future AP</strong> is the premier international research initiative extending the legacy and continuity of APIKS from <strong>2027 onwards</strong>. Powered by a consortium of <strong>11 leading Chilean universities</strong> and researchers across <strong>30+ countries worldwide</strong>.
         </p>
 
-        <!-- Stats -->
+        <!-- Modern Stat Cards -->
         <div class="future-ap-stats">
-          <div class="fap-stat">
-            <span class="fap-stat-number">11</span>
-            <span class="fap-stat-label">Chilean Universities</span>
+          <div class="fap-stat-card">
+            <span class="fap-stat-num">11</span>
+            <span class="fap-stat-title">Universities</span>
+            <span class="fap-stat-sub">Chilean Network</span>
           </div>
-          <div class="fap-stat-divider"></div>
-          <div class="fap-stat">
-            <span class="fap-stat-number">30+</span>
-            <span class="fap-stat-label">Countries</span>
+          <div class="fap-stat-card">
+            <span class="fap-stat-num">30+</span>
+            <span class="fap-stat-title">Countries</span>
+            <span class="fap-stat-sub">Global Research</span>
           </div>
-          <div class="fap-stat-divider"></div>
-          <div class="fap-stat">
-            <span class="fap-stat-number">2027</span>
-            <span class="fap-stat-label">Launch Year</span>
+          <div class="fap-stat-card">
+            <span class="fap-stat-num">2027</span>
+            <span class="fap-stat-title">Launch</span>
+            <span class="fap-stat-sub">APIKS Horizon</span>
           </div>
         </div>
 
@@ -543,26 +544,43 @@
         <div class="future-ap-ctas">
           <a href="https://www.linkedin.com/company/future-ap/posts/?feedView=all"
              target="_blank" rel="noopener noreferrer"
-             class="fap-btn fap-btn-primary" id="future-ap-linkedin">
-            <i data-lucide="linkedin" aria-hidden="true"></i>
+             class="fap-btn-main fap-btn-linkedin" id="future-ap-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z"/></svg>
             Follow Future AP
           </a>
           <a href="https://www.ua.pt/pt/cipes/future-of-academic-profession-conference"
              target="_blank" rel="noopener noreferrer"
-             class="fap-btn fap-btn-outline" id="future-ap-cipes">
-            <i data-lucide="external-link" aria-hidden="true"></i>
-            Future AP Conference
+             class="fap-btn-main fap-btn-secondary" id="future-ap-cipes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            CIPES Conference 2026
           </a>
         </div>
       </div>
 
-      <!-- Right: logo -->
-      <div class="future-ap-logo-col" data-aos="fade-left" data-aos-delay="100">
-        <div class="future-ap-logo-wrap">
-          <img src="logos/logo-future-ap.jpg"
-               alt="Future AP – Future of Academic Profession"
-               class="future-ap-logo" loading="lazy" />
-          <p class="future-ap-logo-caption">Starting 2027 · Continuity of APIKS</p>
+      <!-- Right: Premium Showcase Card -->
+      <div class="future-ap-showcase" data-aos="fade-left" data-aos-delay="100">
+        <div class="future-ap-showcase-glow" aria-hidden="true"></div>
+        <div class="future-ap-card">
+          <span class="fap-card-tag">Official Continuity of APIKS</span>
+          <div class="fap-logo-frame">
+            <img src="logos/logo-future-ap.jpg"
+                 alt="Future AP – Future of Academic Profession"
+                 loading="lazy" />
+          </div>
+          <div class="fap-card-features">
+            <div class="fap-feat-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Global Academic Research Initiative</span>
+            </div>
+            <div class="fap-feat-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <span>Higher Education Policy & Academic Work</span>
+            </div>
+          </div>
+          <div class="fap-card-status">
+            <span class="fap-status-dot"></span>
+            <span>Worldwide Launch 2027</span>
+          </div>
         </div>
       </div>
 
