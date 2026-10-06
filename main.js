@@ -123,6 +123,147 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 4b. STAT DETAIL PANEL (expands inline below the stats bar)
+  const statPanel = document.getElementById('stat-panel');
+  if (statPanel) {
+    const statButtons = document.querySelectorAll('.stat-item[data-stat]');
+    const panelCard = statPanel.querySelector('.stat-panel-card');
+    const panelFigure = statPanel.querySelector('.stat-panel-figure');
+    const panelTitle = statPanel.querySelector('.stat-panel-title');
+    const panelIntro = statPanel.querySelector('.stat-panel-intro');
+    const panelBody = statPanel.querySelector('.stat-panel-body');
+    const panelMore = statPanel.querySelector('.stat-panel-more');
+    let activeButton = null;
+
+    // Universities (the survey institutions, flagged with data-survey in the partner strip)
+    // and publications are read from the page so the panel stays in sync
+    const buildUniversities = (tpl, total) => {
+      const list = document.createElement('ul');
+      list.className = 'stat-uni-grid';
+      const partners = document.querySelectorAll('.partners-list .partner-item[data-survey]');
+      partners.forEach(partner => {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = partner.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        const logo = partner.querySelector('img');
+        if (logo) {
+          const img = document.createElement('img');
+          img.src = logo.src;
+          img.alt = '';
+          link.appendChild(img);
+        }
+        link.appendChild(document.createTextNode(partner.title || partner.textContent.trim()));
+        item.appendChild(link);
+        list.appendChild(item);
+      });
+      panelBody.appendChild(list);
+      const missing = total - partners.length;
+      if (missing > 0 && tpl.dataset.missing) {
+        const note = document.createElement('p');
+        note.className = 'stat-panel-note';
+        note.textContent = tpl.dataset.missing.replace('{n}', missing);
+        panelBody.appendChild(note);
+      }
+    };
+
+    const buildPublications = () => {
+      const list = document.createElement('ul');
+      list.className = 'stat-pub-grid';
+      document.querySelectorAll('.pub-card').forEach(card => {
+        const item = document.createElement('li');
+        const type = card.querySelector('.pub-type');
+        const citation = card.querySelector('.pub-citation');
+        if (type) {
+          const tag = document.createElement('span');
+          tag.className = 'stat-pub-type';
+          tag.textContent = type.textContent;
+          item.appendChild(tag);
+        }
+        if (citation) {
+          Array.from(citation.cloneNode(true).childNodes).forEach(node => item.appendChild(node));
+        }
+        list.appendChild(item);
+      });
+      panelBody.appendChild(list);
+    };
+
+    const placeNotch = () => {
+      if (!activeButton) return;
+      const button = activeButton.getBoundingClientRect();
+      const card = panelCard.getBoundingClientRect();
+      panelCard.style.setProperty('--notch-x', (button.left + button.width / 2 - card.left) + 'px');
+    };
+
+    const closePanel = () => {
+      statPanel.classList.remove('is-open');
+      statButtons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+      activeButton = null;
+    };
+
+    const openPanel = (button) => {
+      const tpl = document.getElementById('stat-tpl-' + button.dataset.stat);
+      if (!tpl) return;
+      const total = button.querySelector('.stat-number').getAttribute('data-target');
+      panelFigure.textContent = total + (button.querySelector('.stat-plus') ? '+' : '');
+      panelTitle.textContent = tpl.dataset.title;
+      panelIntro.textContent = tpl.dataset.intro;
+      panelBody.replaceChildren(tpl.content.cloneNode(true));
+      if (button.dataset.stat === 'universities') {
+        buildUniversities(tpl, parseInt(total, 10));
+      } else if (button.dataset.stat === 'publications') {
+        buildPublications();
+      }
+      panelMore.href = tpl.dataset.moreHref;
+      panelMore.firstChild.textContent = tpl.dataset.moreLabel;
+
+      statButtons.forEach(other => other.setAttribute('aria-expanded', other === button ? 'true' : 'false'));
+      activeButton = button;
+      // Measure against the fully open layout: the hero re-centres while the panel grows
+      const wasOpen = statPanel.classList.contains('is-open');
+      statPanel.style.transition = 'none';
+      statPanel.classList.add('is-open');
+      placeNotch();
+      const bar = button.closest('.hero-stats').getBoundingClientRect();
+      // Bring the bar and the start of the panel into view below the sticky header;
+      // when the bar is too tall for that (stacked on small screens), favour the panel
+      const anchor = bar.height > window.innerHeight * 0.45 ? statPanel.getBoundingClientRect().top - 24 : bar.top;
+      const top = anchor + window.scrollY - 96;
+      if (!wasOpen) {
+        statPanel.classList.remove('is-open');
+        void statPanel.offsetHeight;
+      }
+      statPanel.style.transition = '';
+      statPanel.classList.add('is-open');
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    };
+
+    statButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (button === activeButton) {
+          closePanel();
+        } else {
+          openPanel(button);
+        }
+      });
+    });
+
+    statPanel.querySelector('.stat-panel-close').addEventListener('click', () => {
+      const opener = activeButton;
+      closePanel();
+      if (opener) opener.focus();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && activeButton) {
+        const opener = activeButton;
+        closePanel();
+        opener.focus();
+      }
+    });
+    window.addEventListener('resize', placeNotch);
+  }
+
   // 5. BACK TO TOP BUTTON
   const backToTopBtn = document.getElementById('back-to-top');
   if (backToTopBtn) {
