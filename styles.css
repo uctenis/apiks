@@ -919,6 +919,59 @@ button, input, textarea, select {
   color: var(--text-light-muted);
 }
 
+/* Academics: sample breakdown */
+.stat-sample-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+.stat-sample-grid li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-md);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+.stat-sample-num {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--teal-light);
+}
+.stat-sample-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-light);
+}
+.stat-sample-meta {
+  font-size: 0.8rem;
+  color: var(--text-light-muted);
+  margin-bottom: 14px;
+}
+.stat-sample-bar {
+  position: relative;
+  height: 4px;
+  margin-top: auto;
+  border-radius: var(--border-radius-full);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.stat-sample-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--share);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+}
+
 /* Countries: numbered index */
 .stat-country-grid {
   list-style: none;
@@ -1008,6 +1061,9 @@ button, input, textarea, select {
 }
 @media (max-width: 700px) {
   .stat-pub-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-sample-grid {
     grid-template-columns: 1fr;
   }
   .stat-uni-grid {

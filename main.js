@@ -84,6 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. STATS COUNTER ANIMATION
   const statNumbers = document.querySelectorAll('.stat-number');
   
+  // Thousands separator follows the page language (1.258 / 1,258)
+  const statLocale = document.documentElement.lang.startsWith('es') ? 'es-CL' : 'en-US';
+  const formatStat = (value) => Number(value).toLocaleString(statLocale);
+
   const animateCounter = (element) => {
     const target = parseFloat(element.getAttribute('data-target'));
     const duration = 2000; // 2 seconds
@@ -96,11 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const timer = setInterval(() => {
       current += increment;
       if (current >= target) {
-        element.textContent = target;
+        element.textContent = formatStat(target);
         clearInterval(timer);
       } else {
         // Round to nearest integer if integer, or keep decimals if necessary
-        element.textContent = Math.floor(current);
+        element.textContent = formatStat(Math.floor(current));
       }
     }, stepTime);
   };
@@ -119,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     // Fallback
     statNumbers.forEach(num => {
-      num.textContent = num.getAttribute('data-target');
+      num.textContent = formatStat(num.getAttribute('data-target'));
     });
   }
 
@@ -206,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tpl = document.getElementById('stat-tpl-' + button.dataset.stat);
       if (!tpl) return;
       const total = button.querySelector('.stat-number').getAttribute('data-target');
-      panelFigure.textContent = total + (button.querySelector('.stat-plus') ? '+' : '');
+      panelFigure.textContent = formatStat(total) + (button.querySelector('.stat-plus') ? '+' : '');
       panelTitle.textContent = tpl.dataset.title;
       panelIntro.textContent = tpl.dataset.intro;
       panelBody.replaceChildren(tpl.content.cloneNode(true));
@@ -216,6 +220,13 @@ document.addEventListener('DOMContentLoaded', () => {
         buildPublications();
       }
       panelMore.href = tpl.dataset.moreHref;
+      if ('moreExternal' in tpl.dataset) {
+        panelMore.target = '_blank';
+        panelMore.rel = 'noopener noreferrer';
+      } else {
+        panelMore.removeAttribute('target');
+        panelMore.removeAttribute('rel');
+      }
       panelMore.firstChild.textContent = tpl.dataset.moreLabel;
 
       statButtons.forEach(other => other.setAttribute('aria-expanded', other === button ? 'true' : 'false'));

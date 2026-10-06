@@ -37,7 +37,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <link rel="stylesheet" href="styles.css?v=3.3" />
+  <link rel="stylesheet" href="styles.css?v=3.4" />
   <link rel="icon" type="image/png" href="favicon.png?v=2" />
   <link rel="stylesheet" href="iphone.css" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -110,14 +110,14 @@
       <span class="stat-label">Chilean universities</span>
     </button>
     <div class="stat-divider" aria-hidden="true"></div>
+    <button type="button" class="stat-item" data-stat="academics" aria-expanded="false" aria-controls="stat-panel">
+      <span class="stat-value"><span class="stat-number" data-target="1258">0</span></span>
+      <span class="stat-label">Academics surveyed</span>
+    </button>
+    <div class="stat-divider" aria-hidden="true"></div>
     <button type="button" class="stat-item" data-stat="publications" aria-expanded="false" aria-controls="stat-panel">
       <span class="stat-value"><span class="stat-number" data-target="9">0</span><span class="stat-plus">+</span></span>
       <span class="stat-label">Publications</span>
-    </button>
-    <div class="stat-divider" aria-hidden="true"></div>
-    <button type="button" class="stat-item" data-stat="countries" aria-expanded="false" aria-controls="stat-panel">
-      <span class="stat-value"><span class="stat-number" data-target="20">0</span></span>
-      <span class="stat-label">Countries with data</span>
     </button>
   </div>
   <!-- Stat detail panel -->
@@ -141,6 +141,10 @@
     <ul class="stat-country-grid"><li>Argentina</li><li>Canada</li><li>Chile</li><li>Croatia</li><li>Estonia</li><li>Finland</li><li>Germany</li><li>Japan</li><li>Kazakhstan</li><li>Lithuania</li><li>Malaysia</li><li>Mexico</li><li>Portugal</li><li>Russia</li><li>Slovenia</li><li>South Korea</li><li>Sweden</li><li>Switzerland</li><li>Taiwan</li><li>Turkey</li></ul>
   </template>
   <template id="stat-tpl-universities" data-title="Chilean universities" data-intro="The APIKS Chile survey was administered to academics at these 11 universities between late 2018 and early 2019. Select one to visit its website." data-more-href="team.html" data-more-label="Meet the team" data-missing="+{n} more to be announced"></template>
+  <template id="stat-tpl-academics" data-title="Academics surveyed" data-intro="Complete responses to the APIKS Chile survey, administered between late 2018 and early 2019 across the 11 participating universities." data-more-href="http://dx.doi.org/10.31619/caledu.n54.923" data-more-label="Read the article" data-more-external>
+    <ul class="stat-sample-grid"><li><span class="stat-sample-num">464</span><span class="stat-sample-label">Public universities (CUECh)</span><span class="stat-sample-meta">3 universities · 37%</span><span class="stat-sample-bar" style="--share: 37%"></span></li><li><span class="stat-sample-num">252</span><span class="stat-sample-label">Private universities with state funding (CRUCh)</span><span class="stat-sample-meta">3 universities · 20%</span><span class="stat-sample-bar" style="--share: 20%"></span></li><li><span class="stat-sample-num">542</span><span class="stat-sample-label">Private universities (SUA)</span><span class="stat-sample-meta">5 universities · 43%</span><span class="stat-sample-bar" style="--share: 43%"></span></li></ul>
+    <p class="stat-panel-note">More than 8,000 regular faculty members with contracts of at least 23 hours were invited; 1,850 responses were received, 1,258 of them complete. Source: Bernasconi et al. (2021), Calidad en la Educación, 54.</p>
+  </template>
   <template id="stat-tpl-publications" data-title="Recent publications" data-intro="A selection of the team's most recent research output." data-more-href="research.html#publicaciones" data-more-label="See all publications"></template>
   <a href="#about" class="hero-scroll" aria-label="Scroll down">
     <span class="scroll-line"></span>
@@ -777,6 +781,6 @@
     </a>
   </nav>
 
-<script src="main.js?v=3.3"></script>
+<script src="main.js?v=3.4"></script>
 </body>
 </html>
