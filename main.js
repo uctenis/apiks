@@ -142,28 +142,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // Universities (the survey institutions, flagged with data-survey in the partner strip)
     // and publications are read from the page so the panel stays in sync
     const buildUniversities = (tpl, total) => {
-      const list = document.createElement('ul');
-      list.className = 'stat-uni-grid';
-      const partners = document.querySelectorAll('.partners-list .partner-item[data-survey]');
-      partners.forEach(partner => {
-        const item = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = partner.href;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        const logo = partner.querySelector('img');
-        if (logo) {
-          const img = document.createElement('img');
-          img.src = logo.src;
-          img.alt = '';
-          link.appendChild(img);
-        }
-        link.appendChild(document.createTextNode(partner.title || partner.textContent.trim()));
-        item.appendChild(link);
-        list.appendChild(item);
+      const groups = document.createElement('div');
+      groups.className = 'stat-uni-groups';
+      let listed = 0;
+      ['public', 'cruch', 'private'].forEach(key => {
+        const partners = document.querySelectorAll('.partners-list .partner-item[data-survey="' + key + '"]');
+        if (!partners.length) return;
+        listed += partners.length;
+        const group = document.createElement('section');
+        group.className = 'stat-uni-group';
+        const heading = document.createElement('h3');
+        const count = document.createElement('span');
+        count.className = 'stat-uni-count';
+        count.textContent = partners.length;
+        heading.appendChild(count);
+        heading.appendChild(document.createTextNode(tpl.dataset['group' + key.charAt(0).toUpperCase() + key.slice(1)]));
+        group.appendChild(heading);
+        const list = document.createElement('ul');
+        list.className = 'stat-uni-list';
+        partners.forEach(partner => {
+          const item = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = partner.href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          const logo = partner.querySelector('img');
+          if (logo) {
+            const img = document.createElement('img');
+            img.src = logo.src;
+            img.alt = '';
+            link.appendChild(img);
+          }
+          link.appendChild(document.createTextNode(partner.title || partner.textContent.trim()));
+          item.appendChild(link);
+          list.appendChild(item);
+        });
+        group.appendChild(list);
+        groups.appendChild(group);
       });
-      panelBody.appendChild(list);
-      const missing = total - partners.length;
+      panelBody.appendChild(groups);
+      const missing = total - listed;
       if (missing > 0 && tpl.dataset.missing) {
         const note = document.createElement('p');
         note.className = 'stat-panel-note';

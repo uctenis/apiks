@@ -37,7 +37,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <link rel="stylesheet" href="../styles.css?v=3.4" />
+  <link rel="stylesheet" href="../styles.css?v=3.5" />
   <link rel="icon" type="image/png" href="../favicon.png?v=2" />
   <link rel="stylesheet" href="../iphone.css" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,7 +140,7 @@
   <template id="stat-tpl-countries" data-title="Países de APIKS" data-intro="APIKS reúne equipos de investigación de más de 30 países. Estos 20 integran el dataset internacional unificado (2018–2019)." data-more-href="sobre.html" data-more-label="Sobre la red APIKS">
     <ul class="stat-country-grid"><li>Alemania</li><li>Argentina</li><li>Canadá</li><li>Chile</li><li>Corea del Sur</li><li>Croacia</li><li>Eslovenia</li><li>Estonia</li><li>Finlandia</li><li>Japón</li><li>Kazajistán</li><li>Lituania</li><li>Malasia</li><li>México</li><li>Portugal</li><li>Rusia</li><li>Suecia</li><li>Suiza</li><li>Taiwán</li><li>Turquía</li></ul>
   </template>
-  <template id="stat-tpl-universities" data-title="Universidades chilenas" data-intro="La encuesta APIKS Chile se aplicó a académicos de estas 11 universidades entre fines de 2018 y comienzos de 2019. Selecciona una para visitar su sitio." data-more-href="equipo.html" data-more-label="Conocer al equipo" data-missing="+{n} más por anunciar"></template>
+  <template id="stat-tpl-universities" data-group-public="Universidades estatales (CUECh)" data-group-cruch="Universidades privadas con aporte estatal (CRUCh)" data-group-private="Universidades privadas (SUA)" data-title="Universidades chilenas" data-intro="La encuesta APIKS Chile se aplicó entre fines de 2018 y comienzos de 2019 en estas 11 universidades, que cubren los tres tipos principales de institución en Chile." data-more-href="equipo.html" data-more-label="Conocer al equipo" data-missing="+{n} más por anunciar"></template>
   <template id="stat-tpl-academics" data-title="Académicos encuestados" data-intro="Respuestas completas a la encuesta APIKS Chile, aplicada entre fines de 2018 y comienzos de 2019 en las 11 universidades participantes." data-more-href="http://dx.doi.org/10.31619/caledu.n54.923" data-more-label="Leer el artículo" data-more-external>
     <ul class="stat-sample-grid"><li><span class="stat-sample-num">464</span><span class="stat-sample-label">Universidades estatales (CUECh)</span><span class="stat-sample-meta">3 universidades · 37%</span><span class="stat-sample-bar" style="--share: 37%"></span></li><li><span class="stat-sample-num">252</span><span class="stat-sample-label">Universidades privadas con aporte estatal (CRUCh)</span><span class="stat-sample-meta">3 universidades · 20%</span><span class="stat-sample-bar" style="--share: 20%"></span></li><li><span class="stat-sample-num">542</span><span class="stat-sample-label">Universidades privadas (SUA)</span><span class="stat-sample-meta">5 universidades · 43%</span><span class="stat-sample-bar" style="--share: 43%"></span></li></ul>
     <p class="stat-panel-note">Se invitó a más de 8.000 académicos de planta con al menos 23 horas de contrato; se recibieron 1.850 respuestas, 1.258 de ellas completas. Fuente: Bernasconi et al. (2021), Calidad en la Educación, 54.</p>
@@ -633,11 +633,11 @@
         <img class="partner-logo" src="../logos/logo-ufro.png" alt="Logo Universidad de La Frontera" loading="lazy" />
         <span class="partner-name">U. de La Frontera</span>
       </a>
-      <a href="https://www.uc.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Pontificia Universidad Católica de Chile">
+      <a href="https://www.uc.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="cruch" title="Pontificia Universidad Católica de Chile">
         <img class="partner-logo" src="../logos/logo-puc.png" alt="Logo Pontificia Universidad Católica de Chile" loading="lazy" />
         <span class="partner-name">P. U. Católica de Chile</span>
       </a>
-      <a href="https://www.uchile.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad de Chile">
+      <a href="https://www.uchile.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="public" title="Universidad de Chile">
         <img class="partner-logo" src="../logos/logo-uchile.png" alt="Logo Universidad de Chile" loading="lazy" />
         <span class="partner-name">U. de Chile</span>
       </a>
@@ -653,15 +653,15 @@
         <img class="partner-logo" src="../logos/logo-uta.png" alt="Logo Universidad de Tarapacá" loading="lazy" />
         <span class="partner-name">U. de Tarapacá</span>
       </a>
-      <a href="https://www.pucv.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Pontificia Universidad Católica de Valparaíso">
+      <a href="https://www.pucv.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="cruch" title="Pontificia Universidad Católica de Valparaíso">
         <img class="partner-logo" src="../logos/logo-pucv.png" alt="Logo Pontificia Universidad Católica de Valparaíso" loading="lazy" />
         <span class="partner-name">P. U. Católica de Valparaíso</span>
       </a>
-      <a href="https://www.uach.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad Austral de Chile">
+      <a href="https://www.uach.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="cruch" title="Universidad Austral de Chile">
         <img class="partner-logo" src="../logos/logo-uach.png" alt="Logo Universidad Austral de Chile" loading="lazy" />
         <span class="partner-name">U. Austral de Chile</span>
       </a>
-      <a href="https://www.uautonoma.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad Autónoma de Chile">
+      <a href="https://www.uautonoma.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="private" title="Universidad Autónoma de Chile">
         <img class="partner-logo" src="../logos/logo-uautonoma.png" alt="Logo Universidad Autónoma de Chile" loading="lazy" />
         <span class="partner-name">U. Autónoma de Chile</span>
       </a>
@@ -669,27 +669,27 @@
         <img class="partner-logo" src="../logos/logo-udec.png" alt="Logo Universidad de Concepción" loading="lazy" />
         <span class="partner-name">U. de Concepción</span>
       </a>
-      <a href="https://www.uandes.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad de los Andes">
+      <a href="https://www.uandes.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="private" title="Universidad de los Andes">
         <img class="partner-logo" src="../logos/logo-uandes.png" alt="Logo Universidad de los Andes" loading="lazy" />
         <span class="partner-name">U. de los Andes</span>
       </a>
-      <a href="https://www.utalca.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad de Talca">
+      <a href="https://www.utalca.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="public" title="Universidad de Talca">
         <img class="partner-logo" src="../logos/logo-utalca.png" alt="Logo Universidad de Talca" loading="lazy" />
         <span class="partner-name">U. de Talca</span>
       </a>
-      <a href="https://www.udd.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad del Desarrollo">
+      <a href="https://www.udd.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="private" title="Universidad del Desarrollo">
         <img class="partner-logo" src="../logos/logo-udd.jpg" alt="Logo Universidad del Desarrollo" loading="lazy" />
         <span class="partner-name">U. del Desarrollo</span>
       </a>
-      <a href="https://finis.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad Finis Terrae">
+      <a href="https://finis.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="private" title="Universidad Finis Terrae">
         <img class="partner-logo" src="../logos/logo-uft.png" alt="Logo Universidad Finis Terrae" loading="lazy" />
         <span class="partner-name">U. Finis Terrae</span>
       </a>
-      <a href="https://www.uss.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad San Sebastián">
+      <a href="https://www.uss.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="private" title="Universidad San Sebastián">
         <img class="partner-logo" src="../logos/logo-uss.png" alt="Logo Universidad San Sebastián" loading="lazy" />
         <span class="partner-name">U. San Sebastián</span>
       </a>
-      <a href="https://www.utem.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey title="Universidad Tecnológica Metropolitana">
+      <a href="https://www.utem.cl" target="_blank" rel="noopener noreferrer" class="partner-item" data-survey="public" title="Universidad Tecnológica Metropolitana">
         <img class="partner-logo" src="../logos/logo-utem.png" alt="Logo Universidad Tecnológica Metropolitana" loading="lazy" />
         <span class="partner-name">U. Tecnológica Metropolitana</span>
       </a>
@@ -781,6 +781,6 @@
     </a>
   </nav>
 
-<script src="../main.js?v=3.4"></script>
+<script src="../main.js?v=3.5"></script>
 </body>
 </html>
